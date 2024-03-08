@@ -1,1 +1,3 @@
-export * from './user-card';
+import { UserCard } from './user-card';
+
+export { UserCard };
