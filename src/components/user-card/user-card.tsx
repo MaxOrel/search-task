@@ -1,13 +1,21 @@
-import "./style.css";
+import { User } from '../../models/user-models';
+import './style.css';
 
-export function UserCard(props) {
-  return (
-    <div className="userCard">
-      <img className="userPic" src={props.image} />
-      <div className="userInfo">
-        <div>{`${props.firstName} ${props.lastName}`}</div>
-        <div>{props.address.city}</div>
-      </div>
-    </div>
-  );
+type UserCardProps = Pick<User, 'image' | 'lastName' | 'address' | 'firstName'>;
+
+export function UserCard({
+	image,
+	lastName,
+	firstName,
+	address: { city },
+}: UserCardProps) {
+	return (
+		<div className='userCard'>
+			<img className='userPic' src={image} />
+			<div className='userInfo'>
+				<div>{`${firstName} ${lastName}`}</div>
+				<div>{city}</div>
+			</div>
+		</div>
+	);
 }
