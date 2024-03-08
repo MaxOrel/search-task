@@ -5,9 +5,9 @@ import {
 	ErrorState,
 	SearchContext,
 } from './components/search-results/search-context';
-import apiService, { ApiService } from './components/utils/api-service';
 import { User } from './models/user-models';
 import { UserResponseDto } from './types/response';
+import apiService, { ApiService } from './utils/api-service';
 
 export default function App() {
 	const [users, setUsers] = useState<User[]>([]);
